@@ -1,7 +1,8 @@
-package SlidingWindows;
+
+
 import java.util.ArrayList;
 
-class SubArrayToPointers {
+class SubArrayTowPointers {
     public static void main(String args[]){
 
         int arr[]=new int[]{1,2,3,4,5,6};
