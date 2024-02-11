@@ -1,5 +1,3 @@
-
-
 import java.util.ArrayList;
 
 class SubArrayTowPointers {
@@ -20,7 +18,8 @@ class SubArrayTowPointers {
     public static ArrayList<Integer> sumUpToKElements(int arr[],int k){
         ArrayList<Integer> list=new ArrayList<>();
         int currentSum=0;
-
+        
+        //finding first sum up to k elements
         for(int i=0;i<k;i++){
             currentSum+=arr[i];
         }
@@ -28,8 +27,9 @@ class SubArrayTowPointers {
         list.add(currentSum);
 
         for(int i=1;i<arr.length-k+1;i++){
-           currentSum=currentSum-arr[i-1];
-           currentSum=currentSum+arr[i+k-1];
+           
+           currentSum=currentSum-arr[i-1];    //removing the first element
+           currentSum=currentSum+arr[i+k-1];  //adding the i+k-1 element
 
            list.add(currentSum);
         }
