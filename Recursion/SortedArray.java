@@ -1,5 +1,3 @@
-package Recursion;
-
 public class SortedArray {
     public static void main(String args[]){
         int arr1[]=new int[]{1,2,56,-1,6};
