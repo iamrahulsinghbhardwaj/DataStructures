@@ -1,6 +1,6 @@
 public class AllSubstring {
     public static void main(String args[]){
-       // PrintAllSubstring("abc","",0);
+        PrintAllSubstring("xyz","",0);
         PrintAllParanthesis(4,0,0,"");
         //Print all valid Paranthesis
         //n=1 ()
