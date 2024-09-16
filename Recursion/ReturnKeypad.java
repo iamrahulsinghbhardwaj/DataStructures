@@ -5,12 +5,25 @@ public class ReturnKeypad {
         Scanner sc=new Scanner(System.in);
         int input=sc.nextInt();
         String ans[]=FindKeypad(input);
-
         for (String string : ans) {
             System.out.println(string);
         }
-
+        System.out.println();
+        PrintKeypad(input,"");
         sc.close();
+    }
+
+    public static void PrintKeypad(int input,String ans){
+        if(input==0){
+            System.out.println(ans);
+            return;
+        }
+
+        String stringArray[]=HelperKeypad(input%10);
+
+        for(int i=0;i<stringArray.length;i++){
+          PrintKeypad(input/10,stringArray[i]+ans);
+        }
     }
 
     //solve problem for one
@@ -25,14 +38,14 @@ public class ReturnKeypad {
         int lastDigit=input%10;
 
         String smallans[]=FindKeypad(newDigit);
-        String charArray[]=HelperKeypad(lastDigit);
-        String finalString[]=new String[charArray.length*smallans.length];
+        String stringArray[]=HelperKeypad(lastDigit);
+        String finalString[]=new String[stringArray.length*smallans.length];
 
         int finalStringIndex=0;
 
         for(int i=0;i<smallans.length;i++){
-            for(int j=0;j<charArray.length;j++){
-                finalString[finalStringIndex++]=charArray[j]+smallans[i];
+            for(int j=0;j<stringArray.length;j++){
+                finalString[finalStringIndex++]=stringArray[j]+smallans[i];
             }
         }
 
