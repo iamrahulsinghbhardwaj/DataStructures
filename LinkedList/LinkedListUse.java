@@ -15,11 +15,7 @@ public class LinkedListUse {
     }
 
     public static Node<Integer> DeleteNode(Node<Integer> head,int pos){
-        // 1 2 3 4 5
-        // 2
-
-        // 1 2 4 5
-
+  
         if(pos==0 && head.next!=null){
             head=head.next;
             return head;
@@ -39,6 +35,20 @@ public class LinkedListUse {
         }
 
         tempHead.next=tempHead.next.next;
+        return head;
+    }
+
+    public static Node<Integer> InsertNodeRecursive(Node<Integer> head,int pos,int data){
+        if(head==null){
+            return head;
+        }
+
+        if(pos==0){
+            Node<Integer> newNode=new Node<>(data);
+            newNode.next=head;
+            return newNode;
+        }
+        head.next=InsertNodeRecursive(head.next, pos-1, data);
         return head;
     }
 
